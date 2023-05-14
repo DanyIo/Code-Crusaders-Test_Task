@@ -8,7 +8,7 @@ import {
   Label,
   ResponsiveContainer,
 } from "recharts";
-import Title from "./Title";
+import Title from "../Title/Title";
 // Generate Sales Data
 function createData(time: string, amount?: number) {
   return { time, amount };
@@ -31,7 +31,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Wallet</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -60,7 +60,7 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Budget ($)
             </Label>
           </YAxis>
           <Line
