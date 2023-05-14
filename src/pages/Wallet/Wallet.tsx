@@ -31,6 +31,7 @@ export const Wallet = () => {
           flexGrow: 1,
           backgroundColor: "black",
           overflow: "auto",
+          margin: 10,
         }}
       >
         {/*<Toolbar />*/}
