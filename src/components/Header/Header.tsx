@@ -17,7 +17,7 @@ import { mainListItems, secondaryListItems } from "./ListItems/ListItems";
 
 import { useState } from "react";
 
-const drawerWidth: number = 240;
+const drawerWidth: number = 210;
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;

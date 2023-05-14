@@ -29,10 +29,11 @@ export const Wallet = () => {
       <Box
         sx={{
           flexGrow: 1,
+          width:"80%",
           backgroundColor: "black",
           overflow: "auto",
-          marginTop:10,
-          marginLeft:10
+          marginTop: 10,
+          marginLeft: 14,
         }}
       >
         {/*<Toolbar />*/}
