@@ -4,7 +4,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
-import styled from "@emotion/styled";
 import Chart from "./Chart/Chart";
 import Deposits from "./TotalValue/TotalValue";
 import Orders from "./Orders/Orders";
