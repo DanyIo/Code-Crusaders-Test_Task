@@ -1,14 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
+
 import { Box } from "@mui/material";
 
 import { Header } from "./components/Header/Header";
-import { Wallet } from "./pages/Wallet/Wallet";
-import { Income } from "./pages/Income/Income";
-import { Expense } from "./pages/Expense/Expense";
-import { Credit } from "./pages/Credit/Credit";
-import { Deposit } from "./pages/Deposit/Deposit";
-import { GenerateReport } from "./pages/GenerateReport/GenerateReport";
-import { NotFound } from "./pages/NotFound/NotFound";
+import Loader from "./components/Loader/Loader";
+import Wallet from "./pages/Wallet/Wallet";
+
+const Income = lazy(() => import("./pages/Income/Income"));
+const Expense = lazy(() => import("./pages/Expense/Expense"));
+const Credit = lazy(() => import("./pages/Credit/Credit"));
+const Deposit = lazy(() => import("./pages/Deposit/Deposit"));
+const GenerateReport = lazy(
+  () => import("./pages/GenerateReport/GenerateReport")
+);
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
   return (
@@ -26,11 +32,46 @@ function App() {
           <Routes>
             <Route path="/" element={<Wallet />} />
             <Route path="financial-dashboard/" element={<Wallet />} />
-            <Route path="/income" element={<Income />} />
-            <Route path="/expense" element={<Expense />} />
-            <Route path="/credit" element={<Credit />} />
-            <Route path="/deposit" element={<Deposit />} />
-            <Route path="/generatereport" element={<GenerateReport />} />
+            <Route
+              path="/income"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Income />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/expense"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Expense />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/credit"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Credit />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/deposit"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Deposit />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/generatereport"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <GenerateReport />
+                </Suspense>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
