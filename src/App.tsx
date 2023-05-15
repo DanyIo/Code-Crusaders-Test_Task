@@ -5,8 +5,8 @@ import { Box } from "@mui/material";
 
 import { Header } from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
-import Wallet from "./pages/Wallet/Wallet";
 
+const Wallet = lazy(() => import("./pages/Wallet/Wallet"));
 const Income = lazy(() => import("./pages/Income/Income"));
 const Expense = lazy(() => import("./pages/Expense/Expense"));
 const Credit = lazy(() => import("./pages/Credit/Credit"));
@@ -30,8 +30,22 @@ function App() {
         <Header />
         <div>
           <Routes>
-            <Route path="/" element={<Wallet />} />
-            <Route path="financial-dashboard/" element={<Wallet />} />
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Wallet />
+                </Suspense>
+              }
+            />
+            <Route
+              path="financial-dashboard/"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Wallet />
+                </Suspense>
+              }
+            />
             <Route
               path="/income"
               element={
