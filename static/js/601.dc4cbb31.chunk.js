@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfinancial_dashboard=self.webpackChunkfinancial_dashboard||[]).push([[601],{983:function(n,a,e){e.r(a);var i=e(184);a.default=function(){return(0,i.jsx)("div",{children:"Expense"})}}}]);
+//# sourceMappingURL=601.dc4cbb31.chunk.js.map
