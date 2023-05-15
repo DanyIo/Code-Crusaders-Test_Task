@@ -1,3 +1,5 @@
-export const Credit = () => {
+const Credit = () => {
   return <div>Credit</div>;
 };
+
+export default Credit;

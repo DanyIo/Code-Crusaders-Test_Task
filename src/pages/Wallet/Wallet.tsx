@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
+import styled from "@emotion/styled";
 import Chart from "./Chart/Chart";
 import Deposits from "./TotalValue/TotalValue";
 import Orders from "./Orders/Orders";
@@ -23,13 +24,13 @@ const mdTheme = createTheme({
   },
 });
 
-export const Wallet = () => {
+const Wallet = () => {
   return (
     <ThemeProvider theme={mdTheme}>
       <Box
         sx={{
           flexGrow: 1,
-          width:"80%",
+          width: "80%",
           backgroundColor: "black",
           overflow: "auto",
           marginTop: 10,
@@ -83,3 +84,5 @@ export const Wallet = () => {
     </ThemeProvider>
   );
 };
+
+export default Wallet;

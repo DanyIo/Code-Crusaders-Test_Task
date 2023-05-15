@@ -1,3 +1,5 @@
-export const GenerateReport = () => {
+const GenerateReport = () => {
   return <div>GenerateReport</div>;
 };
+
+export default GenerateReport;
