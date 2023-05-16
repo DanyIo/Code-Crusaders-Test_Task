@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfinancial_dashboard=self.webpackChunkfinancial_dashboard||[]).push([[337],{4337:function(n,a,e){e.r(a),e.d(a,{DepositPage:function(){return r}});var i=e(184),r=function(){return(0,i.jsx)("div",{children:"DepositPage"})};a.default=r}}]);
+//# sourceMappingURL=337.0841ed68.chunk.js.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/209.e522ef0d.chunk.js","mappings":"kJAIA,UAJe,WACb,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,UACd,C","sources":["pages/Income/Income.tsx"],"sourcesContent":["const Income = () => {\n  return <div>Income</div>;\n};\n\nexport default Income;\n"],"names":["_jsx","children"],"sourceRoot":""}

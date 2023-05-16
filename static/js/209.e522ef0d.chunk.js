@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfinancial_dashboard=self.webpackChunkfinancial_dashboard||[]).push([[209],{209:function(n,a,c){c.r(a);var e=c(184);a.default=function(){return(0,e.jsx)("div",{children:"Income"})}}}]);
-//# sourceMappingURL=209.e522ef0d.chunk.js.map
