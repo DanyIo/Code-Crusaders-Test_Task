@@ -1,12 +1,10 @@
-import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 
 import InputBlock from "./InputBlock/InputBlock";
 import IncomeHistory from "./IncomeHistory/IncomeHistory";
 
 export const Income = () => {
-  return(
+  return (
     <Container
       sx={{
         display: "flex",
@@ -17,8 +15,8 @@ export const Income = () => {
         background: "black",
       }}
     >
-      <InputBlock/>
-      <IncomeHistory/>
+      <InputBlock />
+      <IncomeHistory />
     </Container>
   );
 };
