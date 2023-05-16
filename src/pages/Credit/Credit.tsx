@@ -1,14 +1,13 @@
 import { Box, Typography, Button } from "@mui/material";
 
-//import { useAppDispatch } from "../../app/hooks";
 import {
   selectUserName,
   selectTotalBudget,
 } from "../../features/financeSlice/financeSlice";
+
 import { useSelector } from "react-redux";
 
-const Credit = () => {
-  // const dispatch = useAppDispatch();
+const CreditPage = () => {
   const userName = useSelector(selectUserName);
   const totalBudget = useSelector(selectTotalBudget);
   const percentage = 20;
@@ -88,4 +87,4 @@ const Credit = () => {
   );
 };
 
-export default Credit;
+export default CreditPage;

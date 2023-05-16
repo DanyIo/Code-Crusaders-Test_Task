@@ -1,35 +1,29 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Link from "@mui/material/Link";
+import ClearIcon from "@mui/icons-material/Clear";
+import { IconButton } from "@mui/material";
 
-function createData(
-  id: number,
-  date: string,
-  name: string,
-  paymentMethod: string,
-  amount: number
-) {
-  return { id, date, name, paymentMethod, amount };
-}
-
-const table = [
-  createData(0, "13.05.2023", "John Walker", "VISA ⠀•••• 5146", 819),
-  createData(1, "16 Mar, 2019", "Paul McCartney", "VISA ⠀•••• 2574", 866.99),
-  createData(2, "16 Mar, 2019", "Michael Jackson", "AMEX ⠀•••• 2000", 654.39),
-  createData(3, "16 Mar, 2019", "Tom Scholz", "MC ⠀•••• 1253", 100.81),
-];
+import { useSelector } from "react-redux";
+import {
+  selectIncome,
+  deleteIncome,
+} from "../../../features/financeSlice/financeSlice";
+import { useAppDispatch } from "../../../app/hooks";
 
 export default function IncomeHistory() {
+  const allIncomes = useSelector(selectIncome);
+  const dispatch = useAppDispatch();
+
   return (
     <Box
       sx={{
         marginTop: "30px",
-        padding: "10px",
+        padding: "5px",
+        width: "90%",
         paddingTop: 0,
         borderRadius: "5px",
         fontFamily: "Georgia",
@@ -60,26 +54,26 @@ export default function IncomeHistory() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {table.map((row) => (
+          {allIncomes.map((row, index) => (
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell>{row.amount}</TableCell>
+              <TableCell>{row.paymentMethod} •••• •••• •••• ••••</TableCell>
+              <TableCell align="left">{`${row.amount} $`}</TableCell>
+              <TableCell>
+                <IconButton
+                  color="secondary"
+                  sx={{ color: "black" }}
+                  onClick={() => dispatch(deleteIncome(index))}
+                >
+                  <ClearIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Link
-        sx={{
-          display: "block",
-          marginTop: "10px",
-          padding: "10px",
-          color: "#3f51b5",
-        }}
-      >
-        See whole history
-      </Link>
+      <Box mt={2} />
     </Box>
   );
 }

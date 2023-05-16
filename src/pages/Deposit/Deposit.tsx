@@ -1,5 +1,5 @@
-export const Deposit = () => {
-  return <div>Deposit</div>;
+export const DepositPage = () => {
+  return <div>DepositPage</div>;
 };
 
-export default Deposit;
+export default DepositPage;
