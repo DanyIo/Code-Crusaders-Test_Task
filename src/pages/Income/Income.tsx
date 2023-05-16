@@ -22,3 +22,5 @@ export const Income = () => {
     </Container>
   );
 };
+
+export default Income;

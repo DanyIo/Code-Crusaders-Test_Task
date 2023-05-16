@@ -23,13 +23,13 @@ const mdTheme = createTheme({
   },
 });
 
-export const Wallet = () => {
+const Wallet = () => {
   return (
     <ThemeProvider theme={mdTheme}>
       <Box
         sx={{
           flexGrow: 1,
-          width:"80%",
+          width: "80%",
           backgroundColor: "black",
           overflow: "auto",
           marginTop: 10,
@@ -83,3 +83,5 @@ export const Wallet = () => {
     </ThemeProvider>
   );
 };
+
+export default Wallet;

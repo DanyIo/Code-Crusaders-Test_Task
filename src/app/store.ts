@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import FinanceReducer from "../features/financeSlice/financeSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    finance: FinanceReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
