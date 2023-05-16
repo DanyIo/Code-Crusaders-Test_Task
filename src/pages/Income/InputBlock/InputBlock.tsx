@@ -55,7 +55,7 @@ export default function InputBlock() {
         borderRadius: "5px",
         fontFamily: "Georgia",
         background: "white",
-        width: "65%",
+        width: "90%",
       }}
     >
       <h2
