@@ -1,9 +1,52 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
-import TextField from "@material-ui/core/TextField/TextField";
+import Button from "@mui/material/Button";
+
+import { addNewIncome } from "../../../features/financeSlice/financeSlice";
+import { useAppDispatch } from "../../../app/hooks";
+
+import { useState } from "react";
+
+function createData(
+  id: number,
+  date: string,
+  name: string,
+  paymentMethod: string,
+  amount: number
+) {
+  return { id, date, name, paymentMethod, amount };
+}
 
 export default function InputBlock() {
+  const [transactionDate, setTransactionDate] = useState("");
+  const [senderName, setSenderName] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [transactionAmount, setTransactionAmount] = useState("");
+
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = () => {
+    // Call the createData function with the input values
+    const newIncome = createData(
+      // Pass the state variables as arguments
+      0,
+      transactionDate,
+      senderName,
+      paymentMethod,
+      parseFloat(transactionAmount)
+    );
+
+    // Dispatch an action to add the new income
+    dispatch(addNewIncome(newIncome));
+
+    // Clear the input fields
+    setTransactionDate("");
+    setSenderName("");
+    setPaymentMethod("");
+    setTransactionAmount("");
+  };
+
   return (
     <Box
       sx={{
@@ -12,6 +55,7 @@ export default function InputBlock() {
         borderRadius: "5px",
         fontFamily: "Georgia",
         background: "white",
+        width: "65%",
       }}
     >
       <h2
@@ -25,7 +69,7 @@ export default function InputBlock() {
           fontSize: 26,
         }}
       >
-        Input new income
+        Fill new income
       </h2>
       <Grid container>
         <Grid
@@ -46,11 +90,14 @@ export default function InputBlock() {
           </h3>
           <TextField
             variant="outlined"
+            placeholder="13.05.2023"
             style={{
               width: "100%",
               borderRadius: 5,
             }}
-          ></TextField>
+            value={transactionDate}
+            onChange={(e) => setTransactionDate(e.target.value)}
+          />
         </Grid>
         <Grid
           item
@@ -70,11 +117,14 @@ export default function InputBlock() {
           </h3>
           <TextField
             variant="outlined"
+            placeholder="Zoreslava Shpak"
             style={{
               width: "100%",
               borderRadius: 5,
             }}
-          ></TextField>
+            value={senderName}
+            onChange={(e) => setSenderName(e.target.value)}
+          />
         </Grid>
         <Grid
           item
@@ -94,11 +144,14 @@ export default function InputBlock() {
           </h3>
           <TextField
             variant="outlined"
+            placeholder="VISA"
             style={{
               width: "100%",
               borderRadius: 5,
             }}
-          ></TextField>
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+          />
         </Grid>
         <Grid
           item
@@ -114,17 +167,43 @@ export default function InputBlock() {
               fontSize: 16,
             }}
           >
-            Amount of tranaction
+            Amount of transaction
           </h3>
           <TextField
             variant="outlined"
+            placeholder="6 666"
             style={{
               width: "100%",
               borderRadius: 5,
             }}
-          ></TextField>
+            value={transactionAmount}
+            onChange={(e) => setTransactionAmount(e.target.value)}
+          />
         </Grid>
       </Grid>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: 2,
+        }}
+      >
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            backgroundColor: "black",
+            width: "50%",
+            color: "white",
+            ":hover": {
+              backgroundColor: "gray",
+            },
+          }}
+          onClick={handleSubmit}
+        >
+          Add new income
+        </Button>
+      </Box>
     </Box>
   );
 }

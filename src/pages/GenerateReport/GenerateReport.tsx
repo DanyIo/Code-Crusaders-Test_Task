@@ -1,5 +1,5 @@
-const GenerateReport = () => {
+const GenerateReportPage = () => {
   return <div>GenerateReport</div>;
 };
 
-export default GenerateReport;
+export default GenerateReportPage;

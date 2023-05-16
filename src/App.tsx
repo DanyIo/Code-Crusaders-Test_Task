@@ -6,15 +6,15 @@ import { Box } from "@mui/material";
 import { Header } from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
 
-const Wallet = lazy(() => import("./pages/Wallet/Wallet"));
-const Income = lazy(() => import("./pages/Income/Income"));
-const Expense = lazy(() => import("./pages/Expense/Expense"));
-const Credit = lazy(() => import("./pages/Credit/Credit"));
-const Deposit = lazy(() => import("./pages/Deposit/Deposit"));
-const GenerateReport = lazy(
+const WalletPage = lazy(() => import("./pages/Wallet/Wallet"));
+const IncomePage = lazy(() => import("./pages/Income/Income"));
+const ExpensePage = lazy(() => import("./pages/Expense/Expense"));
+const CreditPage = lazy(() => import("./pages/Credit/Credit"));
+const DepositPage = lazy(() => import("./pages/Deposit/Deposit"));
+const GenerateReportPage = lazy(
   () => import("./pages/GenerateReport/GenerateReport")
 );
-const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+const NotFoundPage = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
               path="/"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Wallet />
+                  <WalletPage />
                 </Suspense>
               }
             />
@@ -42,7 +42,7 @@ function App() {
               path="financial-dashboard/"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Wallet />
+                  <WalletPage />
                 </Suspense>
               }
             />
@@ -50,7 +50,7 @@ function App() {
               path="/income"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Income />
+                  <IncomePage />
                 </Suspense>
               }
             />
@@ -58,7 +58,7 @@ function App() {
               path="/expense"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Expense />
+                  <ExpensePage />
                 </Suspense>
               }
             />
@@ -66,7 +66,7 @@ function App() {
               path="/credit"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Credit />
+                  <CreditPage />
                 </Suspense>
               }
             />
@@ -74,7 +74,7 @@ function App() {
               path="/deposit"
               element={
                 <Suspense fallback={<Loader />}>
-                  <Deposit />
+                  <DepositPage />
                 </Suspense>
               }
             />
@@ -82,11 +82,11 @@ function App() {
               path="/generatereport"
               element={
                 <Suspense fallback={<Loader />}>
-                  <GenerateReport />
+                  <GenerateReportPage />
                 </Suspense>
               }
             />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
       </BrowserRouter>

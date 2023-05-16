@@ -1,15 +1,23 @@
-interface User {
-  id: null | string;
+type User = {
+  id: number | null;
   name: string;
   email: string;
-}
+};
 
-export interface FinancialAppState {
+export type Income = {
+  id: number;
+  date: string;
+  name: string;
+  paymentMethod: string;
+  amount: number;
+};
+
+export type FinancialAppState = {
   user: User;
-  accounts: any[]; // Replace 'any' with the actual type for accounts
-  transactions: any[]; // Replace 'any' with the actual type for transactions
+  accounts: any[];
+  transactions: any[];
   deposit: number;
   credit: number;
-  income: number;
+  income: Income[];
   totalBudget: number;
-}
+};
