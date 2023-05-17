@@ -27,9 +27,15 @@ export default function InputBlock() {
   const dispatch = useAppDispatch();
 
   const handleSubmit = () => {
-    // Call the createData function with the input values
+    if (
+      transactionDate.trim() === "" ||
+      senderName.trim() === "" ||
+      paymentMethod.trim() === "" ||
+      transactionAmount.trim() === ""
+    ) {
+      return;
+    }
     const newIncome = createData(
-      // Pass the state variables as arguments
       0,
       transactionDate,
       senderName,
@@ -37,10 +43,8 @@ export default function InputBlock() {
       parseFloat(transactionAmount)
     );
 
-    // Dispatch an action to add the new income
     dispatch(addNewIncome(newIncome));
 
-    // Clear the input fields
     setTransactionDate("");
     setSenderName("");
     setPaymentMethod("");

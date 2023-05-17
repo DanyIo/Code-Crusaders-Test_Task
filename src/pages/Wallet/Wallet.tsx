@@ -23,7 +23,7 @@ const mdTheme = createTheme({
   },
 });
 
-const Wallet = () => {
+const WalletPage = () => {  
   return (
     <ThemeProvider theme={mdTheme}>
       <Box
@@ -84,4 +84,4 @@ const Wallet = () => {
   );
 };
 
-export default Wallet;
+export default WalletPage;

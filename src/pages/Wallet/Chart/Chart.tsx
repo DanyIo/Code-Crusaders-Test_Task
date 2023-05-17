@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Title from "../Title/Title";
-// Generate Sales Data
+
 function createData(time: string, amount?: number) {
   return { time, amount };
 }
