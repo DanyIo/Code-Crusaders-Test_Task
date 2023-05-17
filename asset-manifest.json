@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/financial-dashboard/static/js/main.00c3b0c5.js",
-    "static/js/689.05307fd9.chunk.js": "/financial-dashboard/static/js/689.05307fd9.chunk.js",
-    "static/js/403.55c17519.chunk.js": "/financial-dashboard/static/js/403.55c17519.chunk.js",
+    "main.js": "/financial-dashboard/static/js/main.b8727199.js",
+    "static/js/689.de97e5db.chunk.js": "/financial-dashboard/static/js/689.de97e5db.chunk.js",
+    "static/js/403.deff8f8e.chunk.js": "/financial-dashboard/static/js/403.deff8f8e.chunk.js",
     "static/js/601.dc4cbb31.chunk.js": "/financial-dashboard/static/js/601.dc4cbb31.chunk.js",
     "static/js/294.9f1905b4.chunk.js": "/financial-dashboard/static/js/294.9f1905b4.chunk.js",
     "static/js/337.0841ed68.chunk.js": "/financial-dashboard/static/js/337.0841ed68.chunk.js",
@@ -13,9 +13,9 @@
     "static/js/880.b4c5563d.chunk.js": "/financial-dashboard/static/js/880.b4c5563d.chunk.js",
     "static/js/9.68fa9935.chunk.js": "/financial-dashboard/static/js/9.68fa9935.chunk.js",
     "index.html": "/financial-dashboard/index.html",
-    "main.00c3b0c5.js.map": "/financial-dashboard/static/js/main.00c3b0c5.js.map",
-    "689.05307fd9.chunk.js.map": "/financial-dashboard/static/js/689.05307fd9.chunk.js.map",
-    "403.55c17519.chunk.js.map": "/financial-dashboard/static/js/403.55c17519.chunk.js.map",
+    "main.b8727199.js.map": "/financial-dashboard/static/js/main.b8727199.js.map",
+    "689.de97e5db.chunk.js.map": "/financial-dashboard/static/js/689.de97e5db.chunk.js.map",
+    "403.deff8f8e.chunk.js.map": "/financial-dashboard/static/js/403.deff8f8e.chunk.js.map",
     "601.dc4cbb31.chunk.js.map": "/financial-dashboard/static/js/601.dc4cbb31.chunk.js.map",
     "294.9f1905b4.chunk.js.map": "/financial-dashboard/static/js/294.9f1905b4.chunk.js.map",
     "337.0841ed68.chunk.js.map": "/financial-dashboard/static/js/337.0841ed68.chunk.js.map",
@@ -27,6 +27,6 @@
     "9.68fa9935.chunk.js.map": "/financial-dashboard/static/js/9.68fa9935.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.00c3b0c5.js"
+    "static/js/main.b8727199.js"
   ]
 }
