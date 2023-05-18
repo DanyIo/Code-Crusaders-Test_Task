@@ -106,7 +106,7 @@ const CreditPage = () => {
             zIndex: 9999,
           }}
         >
-          Congrats, your application was successful
+          Congrats, your credit application was successful
         </Alert>
       )}
     </>
