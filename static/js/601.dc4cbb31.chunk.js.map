@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/601.dc4cbb31.chunk.js","mappings":"kJAIA,UAJoB,WAClB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,WACd,C","sources":["pages/Expense/Expense.tsx"],"sourcesContent":["const ExpensePage = () => {\n  return <div>Expense</div>;\n};\n\nexport default ExpensePage;\n"],"names":["_jsx","children"],"sourceRoot":""}
