@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/337.0841ed68.chunk.js","mappings":"6LAAaA,EAAc,WACzB,OAAOC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,eACd,EAEA,W","sources":["pages/Deposit/Deposit.tsx"],"sourcesContent":["export const DepositPage = () => {\n  return <div>DepositPage</div>;\n};\n\nexport default DepositPage;\n"],"names":["DepositPage","_jsx","children"],"sourceRoot":""}
