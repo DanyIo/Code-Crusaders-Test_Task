@@ -67,15 +67,27 @@ export const financeSlice = createSlice({
     reduceTheTotalBudget: (state, actions) => {
       state.totalBudget -= actions.payload;
     },
+    increaseTotalBudget: (state, actions) => {
+      state.totalBudget += actions.payload;
+    },
     addCredit: (state, actions) => {
       state.credit += actions.payload;
       state.creditScore -= 100;
     },
+    addDeposit: (state, actions) => {
+      state.deposit += actions.payload;
+    },
   },
 });
 
-export const { addNewIncome, deleteIncome, reduceTheTotalBudget, addCredit } =
-  financeSlice.actions;
+export const {
+  addNewIncome,
+  deleteIncome,
+  reduceTheTotalBudget,
+  increaseTotalBudget,
+  addCredit,
+  addDeposit,
+} = financeSlice.actions;
 
 export const selectUserName = (state: RootState) => state.finance.user.name;
 

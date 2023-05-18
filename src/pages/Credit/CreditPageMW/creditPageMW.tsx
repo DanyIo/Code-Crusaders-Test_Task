@@ -9,7 +9,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 import {
   addCredit,
-  reduceTheTotalBudget,
+  increaseTotalBudget,
 } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
 
@@ -97,14 +97,14 @@ export default function CreditPageModalWindow({
         return;
       } else {
         const parsedAmount = parseFloat(creditAmount);
-        if (parsedAmount > creditLimit) {
+        if (parsedAmount >= creditLimit || parsedAmount === 0) {
           return;
         } else {
           dispatch((dispatch) => {
             dispatch(addCredit(parsedAmount));
-            dispatch(reduceTheTotalBudget(parsedAmount));
+            dispatch(increaseTotalBudget(parsedAmount));
           });
-
+          setCreditAmount("");
           handleShowAlert();
           handleClose();
         }
