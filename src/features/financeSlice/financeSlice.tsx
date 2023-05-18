@@ -13,6 +13,7 @@ const initialState: FinancialAppState = {
   transactions: [],
   deposit: 0,
   credit: 0,
+  creditScore: 400,
   income: [
     {
       id: 0,
@@ -63,10 +64,18 @@ export const financeSlice = createSlice({
     deleteIncome: (state, actions) => {
       state.income.splice(actions.payload, 1);
     },
+    reduceTheTotalBudget: (state, actions) => {
+      state.totalBudget -= actions.payload;
+    },
+    addCredit: (state, actions) => {
+      state.credit += actions.payload;
+      state.creditScore -= 100;
+    },
   },
 });
 
-export const { addNewIncome, deleteIncome } = financeSlice.actions;
+export const { addNewIncome, deleteIncome, reduceTheTotalBudget, addCredit } =
+  financeSlice.actions;
 
 export const selectUserName = (state: RootState) => state.finance.user.name;
 
@@ -74,5 +83,8 @@ export const selectIncome = (state: RootState) => state.finance.income;
 
 export const selectTotalBudget = (state: RootState) =>
   state.finance.totalBudget;
+
+export const selectCreditScore = (state: RootState) =>
+  state.finance.creditScore;
 
 export default financeSlice.reducer;
