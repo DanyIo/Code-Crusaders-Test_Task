@@ -12,6 +12,11 @@ export type Income = {
   amount: number;
 };
 
+export type Expense = {
+  title: string;
+  amount: number;
+};
+
 export type FinancialAppState = {
   user: User;
   accounts: any[];
@@ -20,5 +25,6 @@ export type FinancialAppState = {
   credit: number;
   creditScore: number;
   income: Income[];
+  expense: Expense[];
   totalBudget: number;
 };
