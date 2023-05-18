@@ -18,6 +18,7 @@ export type FinancialAppState = {
   transactions: any[];
   deposit: number;
   credit: number;
+  creditScore: number;
   income: Income[];
   totalBudget: number;
 };

@@ -23,7 +23,7 @@ const mdTheme = createTheme({
   },
 });
 
-const WalletPage = () => {  
+const WalletPage = () => {
   return (
     <ThemeProvider theme={mdTheme}>
       <Box
