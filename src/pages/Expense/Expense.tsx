@@ -30,10 +30,10 @@ const ExpensePage = () => {
       amount: parseFloat(expenseAmount),
     };
 
-    expenseSetGetService(
-      newExpense.title,
-      newExpense.amount
-    );
+    // expenseSetGetService(
+    //   newExpense.title,
+    //   newExpense.amount
+    // );
 
     //expenseDeleteService();
 

@@ -9,9 +9,14 @@ const initialState: FinancialAppState = {
     name: "Piotr",
     email: "someEmail@gmail.com",
   },
-  transactions: [],
-  deposit: 0,
-  credit: 0,
+  transactions: [
+    { date: "13.05.2023", action: "Income", amount: 819 },
+    { date: "16 Mar, 2019", action: "Income", amount: 866.99 },
+    { date: "16 Mar, 2019", action: "Income", amount: 654.39 },
+    { date: "16 Mar, 2019", action: "Income", amount: 100.81 },
+  ],
+  deposit: 2000000,
+  credit: 1000000,
   creditScore: 400,
   income: [
     {
@@ -132,6 +137,6 @@ export const selectExpense = (state: RootState) => state.finance.expense;
 export const selectDeposit = (state: RootState) => state.finance.deposit;
 
 export const selectTransactions = (state: RootState) =>
-  state.finance.transactions
-  ;
+  state.finance.transactions;
 export default financeSlice.reducer;
+

@@ -106,9 +106,11 @@ export default function CreditPageModalWindow({
           dispatch((dispatch) => {
             dispatch(addCredit(parsedAmount));
             dispatch(increaseTotalBudget(parsedAmount));
-            dispatch(addTransaction({action : "Credit", amount: parsedAmount}))
+            dispatch(
+              addTransaction({ action: "Credit", amount: parsedAmount })
+            );
           });
-          creditSetGetService(parsedAmount);
+          //creditSetGetService(parsedAmount);
 
           //creditDeleteService();
 

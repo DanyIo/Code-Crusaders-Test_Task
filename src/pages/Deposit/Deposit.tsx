@@ -43,9 +43,9 @@ const DepositPage = () => {
       return;
     }
 
-    depositSetGetService(
-      parsedDepositAmount
-    );
+    // depositSetGetService(
+    //   parsedDepositAmount
+    // );
 
     //depositDeleteService();
 

@@ -70,7 +70,7 @@ function preventDefault(event: React.MouseEvent) {
 
 export default function Orders() {
   const transaction = useSelector(selectTransactions);
-  console.log(transaction);
+
   return (
     <React.Fragment>
       <Title>Previous transactions</Title>

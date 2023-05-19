@@ -53,12 +53,12 @@ export default function InputBlock() {
       parseFloat(transactionAmount)
     );
 
-    incomeSetGetService(
-      newIncome.date,
-      newIncome.name,
-      newIncome.paymentMethod,
-      newIncome.amount
-    );
+    // incomeSetGetService(
+    //   newIncome.date,
+    //   newIncome.name,
+    //   newIncome.paymentMethod,
+    //   newIncome.amount
+    // );
 
     //incomeDeleteService(12);
 

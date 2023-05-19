@@ -3,7 +3,6 @@ import React, { lazy, Suspense, useEffect } from "react";
 import axios from "axios";
 
 import { Box } from "@mui/material";
-
 import { Header } from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
 
@@ -18,6 +17,9 @@ const FinancialStatePage = lazy(
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFound"));
 
 function App() {
+  React.useEffect(() => {
+    console.log(1312)
+  })
   return (
     <Box
       sx={{
