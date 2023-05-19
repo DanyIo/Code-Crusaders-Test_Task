@@ -19,9 +19,8 @@
             get { return amount; }
         }
 
-        public Deposit(int id, double amount)
+        public Deposit(double amount)
         {
-            this.id = id;
             this.amount = amount;
         }
     }

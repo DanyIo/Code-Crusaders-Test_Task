@@ -12,13 +12,12 @@
         }
         public double Amount
         {
-            set { }
+            set { amount = value; }
             get { return amount; }
         }
 
-        public Balance(int id, double amount)
+        public Balance(double amount)
         {
-            this.id = id;
             this.amount = amount;
         }
     }

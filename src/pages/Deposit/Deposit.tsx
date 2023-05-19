@@ -10,6 +10,8 @@ import {
   reduceTheTotalBudget,
 } from "../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../app/hooks";
+import { depositSetGetService } from "../../services/depositSetGetService";
+import { depositDeleteService } from "../../services/depositDeleteService";
 
 const DepositPage = () => {
   const [depositAmount, setDepositAmount] = useState("");
@@ -39,6 +41,12 @@ const DepositPage = () => {
     if (totalBudget < parsedDepositAmount) {
       return;
     }
+
+    depositSetGetService(
+      parsedDepositAmount
+    );
+
+    //depositDeleteService();
 
     dispatch((dispatch) => {
       dispatch(addDeposit(parsedDepositAmount));

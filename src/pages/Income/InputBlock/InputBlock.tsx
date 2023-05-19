@@ -6,11 +6,10 @@ import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
 import { addNewIncome, selectIncome } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
-import { incomeSetService } from "../../../services/incomeSetService";  
+import { incomeSetGetService } from "../../../services/incomeSetGetService";
+import { incomeDeleteService } from "../../../services/incomeDeleteService";
 
 import { useState } from "react";
-import { incomeGetService } from "../../../services/incomeGetService";
-import { incomeDeleteService } from "../../../services/incomeDeleteService";
 
 function createData(
   id: number,
@@ -50,15 +49,12 @@ export default function InputBlock() {
       parseFloat(transactionAmount)
     );
 
-    incomeSetService(
-      newIncome.id, 
+    incomeSetGetService(
       newIncome.date,
       newIncome.name,
       newIncome.paymentMethod,
       newIncome.amount
     );
-
-    incomeGetService();
 
     //incomeDeleteService(12);
 

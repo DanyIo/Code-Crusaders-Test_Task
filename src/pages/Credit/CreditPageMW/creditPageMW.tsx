@@ -12,6 +12,8 @@ import {
   increaseTotalBudget,
 } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
+import { creditSetGetService } from "../../../services/creditSetGetService";
+import { creditDeleteService } from "../../../services/creditDeleteService";
 
 interface FadeProps {
   children: React.ReactElement;
@@ -104,6 +106,10 @@ export default function CreditPageModalWindow({
             dispatch(addCredit(parsedAmount));
             dispatch(increaseTotalBudget(parsedAmount));
           });
+          creditSetGetService(parsedAmount);
+
+          //creditDeleteService();
+
           setCreditAmount("");
           handleShowAlert();
           handleClose();

@@ -25,9 +25,8 @@
             get { return amount; }
         }
 
-        public Expense(int id, string name, double amount)
+        public Expense(string name, double amount)
         {
-            this.id = id;
             this.name = name;
             this.amount = amount;
         }

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Typography, TextField, Button, Box } from "@mui/material";
 
 import { ExpenseList } from "./ExpenseList/ExpenseList";
+import { expenseSetGetService } from "../../services/expenseSetGetService";
+import { expenseDeleteService } from "../../services/expenseDeleteService";
 
 import { addExpense } from "../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../app/hooks";
@@ -29,6 +31,13 @@ const ExpensePage = () => {
       title: expenseTitle,
       amount: parseFloat(expenseAmount),
     };
+
+    expenseSetGetService(
+      newExpense.title,
+      newExpense.amount
+    );
+
+    //expenseDeleteService();
 
     dispatch(addExpense(newExpense));
 
