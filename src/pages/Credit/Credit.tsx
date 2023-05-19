@@ -33,7 +33,7 @@ const CreditPage = () => {
 
   const handleShowAlert = () => {
     setShowSuccessAlert(true);
-  };
+  };  
 
   return (
     <>

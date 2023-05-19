@@ -3,11 +3,14 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
+import { useSelector } from "react-redux";
 import {
-  addNewIncome,
+  addNewIncome, selectIncome,
   addTransaction,
 } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
+import { incomeSetGetService } from "../../../services/incomeSetGetService";
+import { incomeDeleteService } from "../../../services/incomeDeleteService";
 
 import { useState } from "react";
 
@@ -30,7 +33,7 @@ export default function InputBlock() {
   const [transactionAmount, setTransactionAmount] = useState("");
 
   const dispatch = useAppDispatch();
-
+  const allIncomes = useSelector(selectIncome)
   const handleSubmit = () => {
     if (
       transactionDate.trim() === "" ||
@@ -43,12 +46,21 @@ export default function InputBlock() {
     }
 
     const newIncome = createData(
-      0,
+      allIncomes.length,
       transactionDate,
       senderName,
       paymentMethod,
       parseFloat(transactionAmount)
     );
+
+    incomeSetGetService(
+      newIncome.date,
+      newIncome.name,
+      newIncome.paymentMethod,
+      newIncome.amount
+    );
+
+    //incomeDeleteService(12);
 
     dispatch(addNewIncome(newIncome));
     dispatch(
