@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/financial-dashboard/static/js/main.a042317b.js",
+    "main.js": "/financial-dashboard/static/js/main.52448661.js",
     "static/js/157.56f06567.chunk.js": "/financial-dashboard/static/js/157.56f06567.chunk.js",
     "static/js/886.aa9bcc39.chunk.js": "/financial-dashboard/static/js/886.aa9bcc39.chunk.js",
     "static/js/417.10d9f221.chunk.js": "/financial-dashboard/static/js/417.10d9f221.chunk.js",
@@ -16,7 +16,7 @@
     "static/js/683.49a642f2.chunk.js": "/financial-dashboard/static/js/683.49a642f2.chunk.js",
     "static/js/97.b4cc8f1f.chunk.js": "/financial-dashboard/static/js/97.b4cc8f1f.chunk.js",
     "index.html": "/financial-dashboard/index.html",
-    "main.a042317b.js.map": "/financial-dashboard/static/js/main.a042317b.js.map",
+    "main.52448661.js.map": "/financial-dashboard/static/js/main.52448661.js.map",
     "157.56f06567.chunk.js.map": "/financial-dashboard/static/js/157.56f06567.chunk.js.map",
     "886.aa9bcc39.chunk.js.map": "/financial-dashboard/static/js/886.aa9bcc39.chunk.js.map",
     "417.10d9f221.chunk.js.map": "/financial-dashboard/static/js/417.10d9f221.chunk.js.map",
@@ -33,6 +33,6 @@
     "97.b4cc8f1f.chunk.js.map": "/financial-dashboard/static/js/97.b4cc8f1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a042317b.js"
+    "static/js/main.52448661.js"
   ]
 }
