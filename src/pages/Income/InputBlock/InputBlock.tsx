@@ -3,10 +3,14 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
-import { addNewIncome } from "../../../features/financeSlice/financeSlice";
+import { useSelector } from "react-redux";
+import { addNewIncome, selectIncome } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
+import { incomeSetService } from "../../../services/incomeSetService";  
 
 import { useState } from "react";
+import { incomeGetService } from "../../../services/incomeGetService";
+import { incomeDeleteService } from "../../../services/incomeDeleteService";
 
 function createData(
   id: number,
@@ -19,6 +23,8 @@ function createData(
 }
 
 export default function InputBlock() {
+  const allIncomes = useSelector(selectIncome);
+
   const [transactionDate, setTransactionDate] = useState("");
   const [senderName, setSenderName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -35,13 +41,26 @@ export default function InputBlock() {
     ) {
       return;
     }
+
     const newIncome = createData(
-      0,
+      allIncomes.length,
       transactionDate,
       senderName,
       paymentMethod,
       parseFloat(transactionAmount)
     );
+
+    incomeSetService(
+      newIncome.id, 
+      newIncome.date,
+      newIncome.name,
+      newIncome.paymentMethod,
+      newIncome.amount
+    );
+
+    incomeGetService();
+
+    incomeDeleteService(10);
 
     dispatch(addNewIncome(newIncome));
 
