@@ -19,7 +19,6 @@ export type Expense = {
 
 export type FinancialAppState = {
   user: User;
-  accounts: any[];
   transactions: any[];
   deposit: number;
   credit: number;

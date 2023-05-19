@@ -6,7 +6,9 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Title from "../Title/Title";
-
+import { useSelector } from "react-redux";
+import { selectTransactions } from "../../../features/financeSlice/financeSlice";
+import { CustomScrollBar } from "../../../components/ScrollBar/ScrollBar";
 // Generate Order Data
 function createData(
   id: number,
@@ -67,34 +69,36 @@ function preventDefault(event: React.MouseEvent) {
 }
 
 export default function Orders() {
+  const transaction = useSelector(selectTransactions);
+  console.log(transaction);
   return (
     <React.Fragment>
       <Title>Previous transactions</Title>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Amount</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+      <CustomScrollBar>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>Date</TableCell>
+              <TableCell>Action</TableCell>
+              <TableCell align="right">Amount</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
+          </TableHead>
+          <TableBody>
+            {transaction.length === 0 ? (
+              <p>No transactions yet.</p>
+            ) : (
+              transaction.map((row) => (
+                <TableRow key={row.amount}>
+                  <TableCell>{row.date}</TableCell>
+                  <TableCell>{row.action}</TableCell>
+                  <TableCell align="right">{`$${row.amount}`}</TableCell>
+                </TableRow>
+              ))
+            )}
+          </TableBody>
+        </Table>
+      </CustomScrollBar>
+      <div style={{ marginTop: 2 }}></div>
     </React.Fragment>
   );
 }

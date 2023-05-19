@@ -63,27 +63,27 @@ const CreditPage = () => {
             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <Typography variant="h4" sx={{ mb: 3 }}>
+          <Typography variant="h4" sx={{ mb: 3,fontFamily: "Georgia"  }}>
             Credit Details
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem" }}
+            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem",fontFamily: "Georgia"  }}
           >
             Name: {userName}
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem" }}
+            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem" ,fontFamily: "Georgia" }}
           >
             Credit Score: {creditScore}
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem" }}
+            sx={{ mb: 2, fontSize: "1.2rem", paddingLeft: "1rem",fontFamily: "Georgia"  }}
           >
             Available Credit Limit: {creditLimit.toLocaleString()}$
           </Typography>

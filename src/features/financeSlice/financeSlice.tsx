@@ -7,9 +7,8 @@ const initialState: FinancialAppState = {
   user: {
     id: null,
     name: "Piotr",
-    email: "",
+    email: "someEmail@gmail.com",
   },
-  accounts: [],
   transactions: [],
   deposit: 0,
   credit: 0,
@@ -84,6 +83,19 @@ export const financeSlice = createSlice({
     deleteExpense: (state, actions) => {
       state.expense.splice(actions.payload, 1);
     },
+    resetCredit: (state) => {
+      state.credit = 0;
+    },
+    resetDeposit: (state) => {
+      state.deposit = 0;
+    },
+    addTransaction: (state, actions) => {
+      state.transactions.unshift({
+        date: new Date().toDateString(),
+        action: actions.payload.action,
+        amount: actions.payload.amount,
+      });
+    },
   },
 });
 
@@ -96,9 +108,14 @@ export const {
   addDeposit,
   addExpense,
   deleteExpense,
+  resetCredit,
+  resetDeposit,
+  addTransaction,
 } = financeSlice.actions;
 
 export const selectUserName = (state: RootState) => state.finance.user.name;
+
+export const selectEmail = (state: RootState) => state.finance.user.email;
 
 export const selectIncome = (state: RootState) => state.finance.income;
 
@@ -108,6 +125,13 @@ export const selectTotalBudget = (state: RootState) =>
 export const selectCreditScore = (state: RootState) =>
   state.finance.creditScore;
 
+export const selectCredit = (state: RootState) => state.finance.credit;
+
 export const selectExpense = (state: RootState) => state.finance.expense;
 
+export const selectDeposit = (state: RootState) => state.finance.deposit;
+
+export const selectTransactions = (state: RootState) =>
+  state.finance.transactions
+  ;
 export default financeSlice.reducer;
