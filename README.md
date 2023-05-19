@@ -1,6 +1,6 @@
 ## Documentation: Financial Management Program
 
-This documentation provides an overview of the Financial Management Program, describing its features, components, and usage.
+This documentation provides an overview of the Financial Management Program, describing its features, components, and usage, including the backend implementation using C# and MySQL.
 
 ### Overview
 
@@ -31,6 +31,18 @@ The Financial Management Program consists of the following components:
 
 7. **NotFoundPage**: Displays a 404 error page when a user navigates to a non-existent URL or route.
 
+### Backend Implementation
+
+The backend of the Financial Management Program is implemented using C# programming language and MySQL as the database management system. The backend handles data storage, retrieval, and processing operations. Key components of the backend include:
+
+- **Data Models**: The backend defines data models using C# classes to represent entities such as users, income, expenses, and deposits. These models define the structure and properties of the data stored in the MySQL database.
+
+- **Database Connectivity**: The backend establishes a connection with the MySQL database to perform CRUD (Create, Read, Update, Delete) operations on the data. It utilizes libraries and frameworks such as Entity Framework Core to simplify database interactions.
+
+- **API Endpoints**: The backend exposes RESTful API endpoints that enable communication between the frontend and backend components of the application. These endpoints handle HTTP requests and execute corresponding database operations to retrieve or modify data.
+
+- **Business Logic**: The backend contains business logic that governs the behavior of the Financial Management Program. This logic includes calculations for budget management, data validation, and other operations necessary for maintaining the integrity of financial data.
+
 ### Usage
 
 To use the Financial Management Program, follow these steps:
@@ -39,7 +51,9 @@ To use the Financial Management Program, follow these steps:
 
 2. **Income Tracking**: Visit the IncomePage to add, edit, or delete your income entries. Enter the necessary details, such as the date, name, payment method, and amount.
 
-3. **Expense Tracking**: Navigate to the ExpensePage to manage your expenses. Add, edit, or delete expense entries by specifying the title and amount.
+3. **Expense Tracking**:
+
+ Navigate to the ExpensePage to manage your expenses. Add, edit, or delete expense entries by specifying the title and amount.
 
 4. **Deposit Management**: Access the DepositPage to view and manage your deposits. The page displays the deposit amount, and you can click on "View more" to access detailed information about your deposits.
 
@@ -51,8 +65,6 @@ To use the Financial Management Program, follow these steps:
 
 ### Conclusion
 
-The Financial Management Program is a comprehensive tool for managing your finances. It allows you to track income, expenses, budget, deposits, and credit information in a user-friendly interface. By utilizing the program's features, you can gain valuable insights into your financial situation and make informed decisions regarding
-
- your finances.
+The Financial Management Program is a comprehensive tool for managing your finances. It allows you to track income, expenses, budget, deposits, and credit information in a user-friendly interface. The backend implementation in C# with MySQL ensures efficient data storage and retrieval, enabling smooth operation of the program. By utilizing the program's features, you can gain valuable insights into your financial situation and make informed decisions regarding your finances.
 
 Please note that this documentation provides a general overview of the Financial Management Program. For detailed usage instructions or specific functionalities, refer to the relevant sections or consult the program's user guide.
