@@ -2,6 +2,8 @@
 {
     record DepositId(int id);
     record DepositJson(int id, double amount);
+    record DepositBalanceJson(
+        List<DepositJson> deposits, BalanceJson balance);
 
     public class Deposit
     {

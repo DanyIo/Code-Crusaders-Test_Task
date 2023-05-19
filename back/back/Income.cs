@@ -5,6 +5,9 @@
 
     record IncomeResponseJson(int id, string date, string name, 
         string paymentMethod, double amount);
+
+    record IncomeBalanceJson(
+        List<IncomeResponseJson> income, BalanceJson balance);
     record IncomeId(int id);
 
     public class Income

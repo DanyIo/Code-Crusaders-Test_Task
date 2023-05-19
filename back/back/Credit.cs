@@ -2,6 +2,8 @@
 {
     record CreditId(int id);
     record CreditJson(int id, double amount);
+    record CreditBalanceJson(
+        List<CreditJson> credits, BalanceJson balance);
 
     public class Credit
     {

@@ -65,9 +65,14 @@ app.Map("/pushIncome", defaultMiddleware =>
         Console.WriteLine("Income succesfully pushed");
 
         List<IncomeResponseJson> incomes = new List<IncomeResponseJson>();
+        BalanceJson balanceJson;
 
         using (ApplicationContext db = new ApplicationContext())
         {
+            balanceJson = new BalanceJson(
+                db.Balance.ToList()[0].Amount
+            );
+
             foreach (Income incomeItem in db.Incomes.ToList())
             {
                 IncomeResponseJson responseJson = new IncomeResponseJson(
@@ -82,8 +87,12 @@ app.Map("/pushIncome", defaultMiddleware =>
             }
         }
 
+        IncomeBalanceJson incomeBalance = new IncomeBalanceJson(
+            incomes, balanceJson
+        );
+
         Console.WriteLine("Incomes succesfully pulled");
-        await response.WriteAsJsonAsync<List<IncomeResponseJson>>(incomes);
+        await response.WriteAsJsonAsync<IncomeBalanceJson>(incomeBalance);
     });
 });
 
@@ -158,9 +167,14 @@ app.Map("/pushExpense", defaultMiddleware =>
         Console.WriteLine("Expense succesfull saved");
 
         List<ExpenseJson> expenses = new List<ExpenseJson>();
+        BalanceJson balanceJson;
 
         using (ApplicationContext db = new ApplicationContext())
         {
+            balanceJson = new BalanceJson(
+                db.Balance.ToList()[0].Amount
+            );
+
             foreach (Expense expenseItem in db.Expenses.ToList())
             {
                 ExpenseJson responseJson = new ExpenseJson(
@@ -173,8 +187,12 @@ app.Map("/pushExpense", defaultMiddleware =>
             }
         }
 
+        ExpenseBalanceJson expensesBalance = new ExpenseBalanceJson(
+            expenses, balanceJson
+        );
+
         Console.WriteLine("Expenses successfully pulled");
-        await response.WriteAsJsonAsync<List<ExpenseJson>>(expenses);
+        await response.WriteAsJsonAsync<ExpenseBalanceJson>(expensesBalance);
     });
 });
 
@@ -248,9 +266,14 @@ app.Map("/pushDeposit", defaultMiddleware =>
         Console.WriteLine("Deposit successfully pushed");
 
         List<DepositJson> deposits = new List<DepositJson>();
+        BalanceJson balanceJson;
 
         using (ApplicationContext db = new ApplicationContext())
         {
+            balanceJson = new BalanceJson(
+                db.Balance.ToList()[0].Amount
+            );
+
             foreach (Deposit depositItem in db.Deposits.ToList())
             {
                 DepositJson responseJson = new DepositJson(
@@ -262,8 +285,12 @@ app.Map("/pushDeposit", defaultMiddleware =>
             }
         }
 
+        DepositBalanceJson depositBalance = new DepositBalanceJson(
+            deposits, balanceJson
+        );
+
         Console.WriteLine("Deposit successfully pulled");
-        await response.WriteAsJsonAsync<List<DepositJson>>(deposits);
+        await response.WriteAsJsonAsync<DepositBalanceJson>(depositBalance);
     });
 });
 
@@ -338,9 +365,14 @@ app.Map("/pushCredit", defaultMiddleware =>
         Console.WriteLine("Credit successfully pushed");
 
         List<CreditJson> credits = new List<CreditJson>();
+        BalanceJson balanceJson;
 
         using (ApplicationContext db = new ApplicationContext())
         {
+            balanceJson = new BalanceJson(
+                db.Balance.ToList()[0].Amount
+            );
+
             foreach (Credit creditItem in db.Credits.ToList())
             {
                 CreditJson responseJson = new CreditJson(
@@ -352,8 +384,12 @@ app.Map("/pushCredit", defaultMiddleware =>
             }
         }
 
+        CreditBalanceJson creditBalance = new CreditBalanceJson(
+            credits, balanceJson
+        );
+
         Console.WriteLine("Credit successfully pulled");
-        await response.WriteAsJsonAsync<List<CreditJson>>(credits);
+        await response.WriteAsJsonAsync<CreditBalanceJson>(creditBalance);
     });
 });
 

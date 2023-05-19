@@ -2,6 +2,8 @@
 {
     record ExpenseId(int id);
     record ExpenseJson(int id, string name, double amount);
+    record ExpenseBalanceJson(
+        List<ExpenseJson> expenses, BalanceJson balance);
 
     public class Expense
     {

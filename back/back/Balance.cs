@@ -1,5 +1,6 @@
 ﻿namespace back
 {
+    record BalanceJson(double amount);
     public class Balance
     {
         private int id;
