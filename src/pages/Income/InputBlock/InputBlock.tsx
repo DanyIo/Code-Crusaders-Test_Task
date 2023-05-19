@@ -33,7 +33,7 @@ export default function InputBlock() {
   const [transactionAmount, setTransactionAmount] = useState("");
 
   const dispatch = useAppDispatch();
-
+  const allIncomes = useSelector(selectIncome)
   const handleSubmit = () => {
     if (
       transactionDate.trim() === "" ||
