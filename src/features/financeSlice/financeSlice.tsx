@@ -15,7 +15,7 @@ const initialState: FinancialAppState = {
     { date: "16 Mar, 2019", action: "Income", amount: 654.39 },
     { date: "16 Mar, 2019", action: "Income", amount: 100.81 },
   ],
-  stats: [],
+  stats: [{date: "16 Mar, 2019" , amount : 1000000},{ date: "16 Mar, 2020", action: "Income", amount: 1500000 } ],
   deposit: 2000000,
   credit: 1000000,
   creditScore: 400,
