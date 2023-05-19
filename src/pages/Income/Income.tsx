@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import InputBlock from "./InputBlock/InputBlock";
 import IncomeHistory from "./IncomeHistory/IncomeHistory";
 
-export const Income = () => {
+export const IncomePage = () => {
   return (
     <Container
       sx={{
@@ -13,7 +13,7 @@ export const Income = () => {
         justifyContent: "center",
         backgroundColor: "#000000",
         borderRadius: "3%",
-        marginTop: 25,
+        marginTop: 35,
         padding: "2rem",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
         marginBottom: "50px",
@@ -25,4 +25,4 @@ export const Income = () => {
   );
 };
 
-export default Income;
+export default IncomePage;

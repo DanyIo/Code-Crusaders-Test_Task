@@ -8,6 +8,7 @@ import {
   selectTotalBudget,
   addDeposit,
   reduceTheTotalBudget,
+  addTransaction,
 } from "../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../app/hooks";
 
@@ -43,6 +44,7 @@ const DepositPage = () => {
     dispatch((dispatch) => {
       dispatch(addDeposit(parsedDepositAmount));
       dispatch(reduceTheTotalBudget(parsedDepositAmount));
+      dispatch(addTransaction({action : "Deposit", amount : parsedDepositAmount}))
     });
     setShowSuccessAlert(true);
     setDepositAmount("");
@@ -55,10 +57,14 @@ const DepositPage = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          mt: 4,
+          justifyContent: "center",
+          backgroundColor: "white",
+          borderRadius: "3%",
+          padding: "2rem",
+          boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
         }}
       >
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h4" gutterBottom sx={{fontFamily: "Georgia" }}>
           Deposit Page
         </Typography>
         <TextField
