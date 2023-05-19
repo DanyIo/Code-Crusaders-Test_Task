@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfinancial_dashboard=self.webpackChunkfinancial_dashboard||[]).push([[720],{7720:function(a,n,e){e.r(n);var r=e(184);n.default=function(){return(0,r.jsx)("div",{children:"GenerateReport"})}}}]);
-//# sourceMappingURL=720.db26a26e.chunk.js.map

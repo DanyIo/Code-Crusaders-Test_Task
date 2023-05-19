@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/720.db26a26e.chunk.js","mappings":"mJAIA,UAJ2B,WACzB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,kBACd,C","sources":["pages/GenerateReport/GenerateReport.tsx"],"sourcesContent":["const GenerateReportPage = () => {\n  return <div>GenerateReport</div>;\n};\n\nexport default GenerateReportPage;\n"],"names":["_jsx","children"],"sourceRoot":""}
