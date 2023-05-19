@@ -39,7 +39,7 @@ export const ExpenseList = () => {
       }}
     >
       {expenses.length === 0 ? (
-        <Typography sx={{ fontFamily: "Georgia",ml:4 }}>
+        <Typography sx={{ fontFamily: "Georgia", ml: 4 }}>
           No expenses added yet.
         </Typography>
       ) : (

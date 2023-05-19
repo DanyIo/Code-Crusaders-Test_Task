@@ -52,7 +52,9 @@ const DepositPage = () => {
     dispatch((dispatch) => {
       dispatch(addDeposit(parsedDepositAmount));
       dispatch(reduceTheTotalBudget(parsedDepositAmount));
-      dispatch(addTransaction({action : "Deposit", amount : parsedDepositAmount}))
+      dispatch(
+        addTransaction({ action: "Deposit", amount: parsedDepositAmount })
+      );
     });
     setShowSuccessAlert(true);
     setDepositAmount("");
@@ -72,7 +74,7 @@ const DepositPage = () => {
           boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
         }}
       >
-        <Typography variant="h4" gutterBottom sx={{fontFamily: "Georgia" }}>
+        <Typography variant="h4" gutterBottom sx={{ fontFamily: "Georgia" }}>
           Deposit Page
         </Typography>
         <TextField

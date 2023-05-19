@@ -5,9 +5,15 @@ import { ExpenseList } from "./ExpenseList/ExpenseList";
 import { expenseSetGetService } from "../../services/expenseSetGetService";
 import { expenseDeleteService } from "../../services/expenseDeleteService";
 
-import { addExpense } from "../../features/financeSlice/financeSlice";
+import {
+  addExpense,
+  addTransaction,
+  reduceTheTotalBudget,
+  selectTotalBudget,
+} from "../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../app/hooks";
 import { CustomScrollBar } from "../../components/ScrollBar/ScrollBar";
+import { useSelector } from "react-redux";
 
 const ExpensePage = () => {
   const [expenseTitle, setExpenseTitle] = useState("");
@@ -17,11 +23,15 @@ const ExpensePage = () => {
   );
 
   const dispatch = useAppDispatch();
-
+  const totalBudget = useSelector(selectTotalBudget);
   const handleExpenseSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (expenseTitle.trim() === "" || isNaN(parseFloat(expenseAmount))) {
+    if (
+      expenseTitle.trim() === "" ||
+      isNaN(parseFloat(expenseAmount)) ||
+      parseFloat(expenseAmount) > totalBudget
+    ) {
       return;
     }
 
@@ -38,6 +48,10 @@ const ExpensePage = () => {
     //expenseDeleteService();
 
     dispatch(addExpense(newExpense));
+    dispatch(reduceTheTotalBudget(parseFloat(expenseAmount)));
+    dispatch(
+      addTransaction({ action: "Expense", amount: parseFloat(expenseAmount) })
+    );
 
     setExpenses([...expenses, newExpense]);
 

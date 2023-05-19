@@ -42,39 +42,39 @@ export default function IncomeHistory() {
         Income history
       </h2>
       <CustomScrollBar>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell style={{ fontFamily: "Georgia" }}>Date</TableCell>
-            <TableCell style={{ fontFamily: "Georgia" }}>
-              Name of sender
-            </TableCell>
-            <TableCell style={{ fontFamily: "Georgia" }}>
-              Payment method
-            </TableCell>
-            <TableCell style={{ fontFamily: "Georgia" }}>Amount</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {allIncomes.map((row, index) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.paymentMethod} •••• •••• •••• ••••</TableCell>
-              <TableCell align="left">{`${row.amount} $`}</TableCell>
-              <TableCell>
-                <IconButton
-                  color="secondary"
-                  sx={{ color: "black" }}
-                  onClick={() => dispatch(deleteIncome(index))}
-                >
-                  <ClearIcon />
-                </IconButton>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell style={{ fontFamily: "Georgia" }}>Date</TableCell>
+              <TableCell style={{ fontFamily: "Georgia" }}>
+                Name of sender
               </TableCell>
+              <TableCell style={{ fontFamily: "Georgia" }}>
+                Payment method
+              </TableCell>
+              <TableCell style={{ fontFamily: "Georgia" }}>Amount</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {allIncomes.map((row, index) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.date}</TableCell>
+                <TableCell>{row.name}</TableCell>
+                <TableCell>{row.paymentMethod} •••• •••• •••• ••••</TableCell>
+                <TableCell align="left">{`${row.amount} $`}</TableCell>
+                <TableCell>
+                  <IconButton
+                    color="secondary"
+                    sx={{ color: "black" }}
+                    onClick={() => dispatch(deleteIncome(index))}
+                  >
+                    <ClearIcon />
+                  </IconButton>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </CustomScrollBar>
       <Box mt={2} />
     </Box>

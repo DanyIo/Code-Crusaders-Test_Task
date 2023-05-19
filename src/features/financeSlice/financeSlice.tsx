@@ -15,6 +15,7 @@ const initialState: FinancialAppState = {
     { date: "16 Mar, 2019", action: "Income", amount: 654.39 },
     { date: "16 Mar, 2019", action: "Income", amount: 100.81 },
   ],
+  stats: [],
   deposit: 2000000,
   credit: 1000000,
   creditScore: 400,
@@ -73,6 +74,8 @@ export const financeSlice = createSlice({
       state.totalBudget -= actions.payload;
     },
     increaseTotalBudget: (state, actions) => {
+      console.log(actions.payload);
+
       state.totalBudget += actions.payload;
     },
     addCredit: (state, actions) => {
@@ -101,6 +104,9 @@ export const financeSlice = createSlice({
         amount: actions.payload.amount,
       });
     },
+    upgradeStats: (state, action) => {
+      state.stats.push(action.payload);
+    },
   },
 });
 
@@ -116,6 +122,7 @@ export const {
   resetCredit,
   resetDeposit,
   addTransaction,
+  upgradeStats,
 } = financeSlice.actions;
 
 export const selectUserName = (state: RootState) => state.finance.user.name;
@@ -138,5 +145,7 @@ export const selectDeposit = (state: RootState) => state.finance.deposit;
 
 export const selectTransactions = (state: RootState) =>
   state.finance.transactions;
-export default financeSlice.reducer;
 
+export const selectStats = (state: RootState) => state.finance.stats;
+
+export default financeSlice.reducer;

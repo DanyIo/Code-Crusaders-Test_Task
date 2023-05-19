@@ -9,25 +9,27 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Title from "../Title/Title";
+import { useSelector } from "react-redux";
+import {
+  selectStats,
+  selectTotalBudget,
+  upgradeStats,
+} from "../../../features/financeSlice/financeSlice";
+import { useAppDispatch } from "../../../app/hooks";
 
 function createData(time: string, amount?: number) {
   return { time, amount };
 }
 
-const data = [
-  createData("00:00", 0),
-  createData("03:00", 300),
-  createData("06:00", 600),
-  createData("09:00", 800),
-  createData("12:00", 1500),
-  createData("15:00", 2000),
-  createData("18:00", 2400),
-  createData("21:00", 2400),
-];
-
 export default function Chart() {
+  const data = useSelector(selectStats);
+  const totalBudget = useSelector(selectTotalBudget);
   const theme = useTheme();
-
+  const dispatch = useAppDispatch();
+  React.useEffect(() => {
+    dispatch(upgradeStats(createData(new Date().toDateString(), totalBudget)));
+    console.log(data);
+  }, [totalBudget]);
   return (
     <React.Fragment>
       <Title>Wallet</Title>

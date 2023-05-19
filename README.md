@@ -53,7 +53,7 @@ To use the Financial Management Program, follow these steps:
 
 3. **Expense Tracking**:
 
- Navigate to the ExpensePage to manage your expenses. Add, edit, or delete expense entries by specifying the title and amount.
+Navigate to the ExpensePage to manage your expenses. Add, edit, or delete expense entries by specifying the title and amount.
 
 4. **Deposit Management**: Access the DepositPage to view and manage your deposits. The page displays the deposit amount, and you can click on "View more" to access detailed information about your deposits.
 

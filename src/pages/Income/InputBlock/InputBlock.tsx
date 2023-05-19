@@ -5,8 +5,10 @@ import Button from "@mui/material/Button";
 
 import { useSelector } from "react-redux";
 import {
-  addNewIncome, selectIncome,
+  addNewIncome,
+  selectIncome,
   addTransaction,
+  increaseTotalBudget,
 } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
 import { incomeSetGetService } from "../../../services/incomeSetGetService";
@@ -33,7 +35,7 @@ export default function InputBlock() {
   const [transactionAmount, setTransactionAmount] = useState("");
 
   const dispatch = useAppDispatch();
-  const allIncomes = useSelector(selectIncome)
+  const allIncomes = useSelector(selectIncome);
   const handleSubmit = () => {
     if (
       transactionDate.trim() === "" ||
@@ -63,6 +65,7 @@ export default function InputBlock() {
     //incomeDeleteService(12);
 
     dispatch(addNewIncome(newIncome));
+    dispatch(increaseTotalBudget(parseFloat(transactionAmount)));
     dispatch(
       addTransaction({
         action: "Income",

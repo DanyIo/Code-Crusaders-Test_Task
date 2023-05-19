@@ -13,12 +13,8 @@
         "packagesPath": "/Users/danilobodnar/.nuget/packages/",
         "outputPath": "/Users/danilobodnar/Documents/CODE/hackaton/financial-dashboard/back/back/obj/",
         "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/danilobodnar/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
+        "configFilePaths": ["/Users/danilobodnar/.nuget/NuGet/NuGet.Config"],
+        "originalTargetFrameworks": ["net6.0"],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -29,9 +25,7 @@
           }
         },
         "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
+          "warnAsError": ["NU1605"]
         }
       },
       "frameworks": {
