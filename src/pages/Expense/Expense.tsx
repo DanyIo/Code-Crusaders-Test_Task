@@ -7,6 +7,7 @@ import { expenseDeleteService } from "../../services/expenseDeleteService";
 
 import { addExpense } from "../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../app/hooks";
+import { CustomScrollBar } from "../../components/ScrollBar/ScrollBar";
 
 const ExpensePage = () => {
   const [expenseTitle, setExpenseTitle] = useState("");
@@ -20,13 +21,10 @@ const ExpensePage = () => {
   const handleExpenseSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate the expense title and amount
     if (expenseTitle.trim() === "" || isNaN(parseFloat(expenseAmount))) {
-      // Handle the case when either the title or amount is empty or not a valid number
       return;
     }
 
-    // Create a new expense object
     const newExpense = {
       title: expenseTitle,
       amount: parseFloat(expenseAmount),
@@ -41,10 +39,8 @@ const ExpensePage = () => {
 
     dispatch(addExpense(newExpense));
 
-    // Add the new expense to the expenses array
     setExpenses([...expenses, newExpense]);
 
-    // Reset the input fields
     setExpenseTitle("");
     setExpenseAmount("");
   };
@@ -53,12 +49,18 @@ const ExpensePage = () => {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "white",
+        borderRadius: "3%",
+        marginTop: 20,
+        padding: "2rem",
+        boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
+        marginBottom: "50px",
       }}
     >
-      <Typography variant="h2" sx={{ mb: 2 }}>
+      <Typography variant="h3" sx={{ mb: 2, fontFamily: "Georgia" }}>
         Expense Page
       </Typography>
       <form onSubmit={handleExpenseSubmit}>
@@ -101,7 +103,19 @@ const ExpensePage = () => {
           </Button>
         </Box>
       </form>
-      <ExpenseList />
+      <h2
+        style={{
+          padding: 10,
+          fontWeight: "normal",
+          color: "black",
+          fontSize: 26,
+        }}
+      >
+        Expense history
+      </h2>
+      <CustomScrollBar>
+        <ExpenseList />
+      </CustomScrollBar>
     </Box>
   );
 };

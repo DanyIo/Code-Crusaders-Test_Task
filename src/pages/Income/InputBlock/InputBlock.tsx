@@ -4,7 +4,10 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
 import { useSelector } from "react-redux";
-import { addNewIncome, selectIncome } from "../../../features/financeSlice/financeSlice";
+import {
+  addNewIncome, selectIncome,
+  addTransaction,
+} from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
 import { incomeSetGetService } from "../../../services/incomeSetGetService";
 import { incomeDeleteService } from "../../../services/incomeDeleteService";
@@ -22,9 +25,9 @@ function createData(
 }
 
 export default function InputBlock() {
-  const allIncomes = useSelector(selectIncome);
-
-  const [transactionDate, setTransactionDate] = useState("");
+  const [transactionDate, setTransactionDate] = useState(
+    `${new Date().toDateString()}`
+  );
   const [senderName, setSenderName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [transactionAmount, setTransactionAmount] = useState("");
@@ -36,7 +39,8 @@ export default function InputBlock() {
       transactionDate.trim() === "" ||
       senderName.trim() === "" ||
       paymentMethod.trim() === "" ||
-      transactionAmount.trim() === ""
+      transactionAmount.trim() === "" ||
+      isNaN(parseFloat(transactionAmount))
     ) {
       return;
     }
@@ -59,8 +63,14 @@ export default function InputBlock() {
     //incomeDeleteService(12);
 
     dispatch(addNewIncome(newIncome));
+    dispatch(
+      addTransaction({
+        action: "Income",
+        amount: parseFloat(transactionAmount),
+      })
+    );
 
-    setTransactionDate("");
+    setTransactionDate(`${new Date().toDateString()}`);
     setSenderName("");
     setPaymentMethod("");
     setTransactionAmount("");
@@ -109,13 +119,14 @@ export default function InputBlock() {
           </h3>
           <TextField
             variant="outlined"
-            placeholder="13.05.2023"
-            style={{
+            defaultValue={`${new Date().toDateString()}`}
+            sx={{
               width: "100%",
               borderRadius: 5,
             }}
-            value={transactionDate}
-            onChange={(e) => setTransactionDate(e.target.value)}
+            InputProps={{
+              readOnly: true,
+            }}
           />
         </Grid>
         <Grid

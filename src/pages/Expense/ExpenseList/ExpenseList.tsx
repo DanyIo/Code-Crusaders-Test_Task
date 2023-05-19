@@ -25,7 +25,7 @@ export const ExpenseList = () => {
   return (
     <Box
       sx={{
-        marginTop: "30px",
+        marginTop: "10px",
         padding: "5px",
         width: "90%",
         paddingTop: 0,
@@ -38,18 +38,10 @@ export const ExpenseList = () => {
         flexDirection: "column",
       }}
     >
-      <h2
-        style={{
-          padding: 10,
-          fontWeight: "normal",
-          color: "black",
-          fontSize: 26,
-        }}
-      >
-        Expense history
-      </h2>
       {expenses.length === 0 ? (
-        <Typography variant="body1">No expenses added yet.</Typography>
+        <Typography sx={{ fontFamily: "Georgia",ml:4 }}>
+          No expenses added yet.
+        </Typography>
       ) : (
         <Table size="small">
           <TableHead>

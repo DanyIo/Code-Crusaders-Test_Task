@@ -12,6 +12,7 @@ import {
   selectIncome,
   deleteIncome,
 } from "../../../features/financeSlice/financeSlice";
+import { CustomScrollBar } from "../../../components/ScrollBar/ScrollBar";
 import { useAppDispatch } from "../../../app/hooks";
 
 export default function IncomeHistory() {
@@ -40,6 +41,7 @@ export default function IncomeHistory() {
       >
         Income history
       </h2>
+      <CustomScrollBar>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -73,6 +75,7 @@ export default function IncomeHistory() {
           ))}
         </TableBody>
       </Table>
+      </CustomScrollBar>
       <Box mt={2} />
     </Box>
   );
