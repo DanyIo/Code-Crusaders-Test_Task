@@ -9,6 +9,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 import {
   addCredit,
+  addTransaction,
   increaseTotalBudget,
 } from "../../../features/financeSlice/financeSlice";
 import { useAppDispatch } from "../../../app/hooks";
@@ -105,6 +106,7 @@ export default function CreditPageModalWindow({
           dispatch((dispatch) => {
             dispatch(addCredit(parsedAmount));
             dispatch(increaseTotalBudget(parsedAmount));
+            dispatch(addTransaction({action : "Credit", amount: parsedAmount}))
           });
           creditSetGetService(parsedAmount);
 

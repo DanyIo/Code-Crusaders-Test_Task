@@ -12,8 +12,8 @@ const IncomePage = lazy(() => import("./pages/Income/Income"));
 const ExpensePage = lazy(() => import("./pages/Expense/Expense"));
 const CreditPage = lazy(() => import("./pages/Credit/Credit"));
 const DepositPage = lazy(() => import("./pages/Deposit/Deposit"));
-const GenerateReportPage = lazy(
-  () => import("./pages/GenerateReport/GenerateReport")
+const FinancialStatePage = lazy(
+  () => import("./pages/FinancialStatePage/FinancialStatePage")
 );
 const NotFoundPage = lazy(() => import("./pages/NotFound/NotFound"));
 
@@ -83,7 +83,7 @@ function App() {
               path="/generatereport"
               element={
                 <Suspense fallback={<Loader />}>
-                  <GenerateReportPage />
+                  <FinancialStatePage />
                 </Suspense>
               }
             />
